@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind and daisyui CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+    />
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <title>Dev Board</title>
+  </head>
+  <body class="bg-[#F4F7FF] font-[Poppins] min-h-screen">
+    <!-- Header -->
+    <header class="max-w-[1600px] mx-auto p-3">
+      <nav class="flex justify-between p-3 rounded-xl bg-white">
+        <div class="flex items-center gap-2">
+          <img src="./assets/logo.png" alt="Logo" />
+          <h1 class="text-3xl font-bold">
+            <span class="font-light">Dev</span>Board
+          </h1>
+        </div>
+        <div>
+          <button id="back-desk" class="btn bg-[#3752FD] text-white rounded-xl">
+            Back to Desk
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="max-w-[1600px] mx-auto p-3">
+      <h1 class="text-center text-4xl font-bold py-6">Blog</h1>
+      <!-- Question 1 -->
+      <section class="p-6 rounded-xl bg-white mb-6">
+        <h2 class="font-bold pb-4">
+          Question-1: What are the different ways to select an element in the
+          DOM?
+        </h2>
+        <hr class="border-t-2 border-gray-200 border-dashed" />
+        <p class="text-gray-500 pt-4 font-medium">
+          We can select elements in several ways, such as getElementById,
+          getElementsByClassName, querySelector, querySelectorAll, and
+          getElementsByTagName.
+        </p>
+      </section>
+      <!-- Question 2 -->
+      <section class="p-6 rounded-xl bg-white mb-6">
+        <h2 class="font-bold pb-4">
+          Question-2: What is the difference between innerHTML, innerText, and
+          textContent ?
+        </h2>
+        <hr class="border-t-2 border-gray-200 border-dashed" />
+        <p class="text-gray-500 pt-4 font-medium">
+          1. innerHTML: It gives html code which inside the tag. <br />
+          2. innerText: It gives only the text which inside the tag. <br />
+          3. textContent: It gives all the text inside the tag, including hidden
+          elements.
+        </p>
+      </section>
+      <!-- Question 3 -->
+      <section class="p-6 rounded-xl bg-white mb-6">
+        <h2 class="font-bold pb-4">
+          Question-3: What is event delegation in the DOM?
+        </h2>
+        <hr class="border-t-2 border-gray-200 border-dashed" />
+        <p class="text-gray-500 pt-4 font-medium">
+          Instead of adding event listeners to multiple child elements,add one
+          listener to the parent and parent element handles events for its child
+          elements using event bubbling.
+        </p>
+      </section>
+      <!-- Question 4 -->
+      <section class="p-6 rounded-xl bg-white mb-6">
+        <h2 class="font-bold pb-4">
+          Question-4: What is event bubbling in the DOM?
+        </h2>
+        <hr class="border-t-2 border-gray-200 border-dashed" />
+        <p class="text-gray-500 pt-4 font-medium">
+          Event bubbling is a process where an event triggered on a child
+          element propagates up through its parent elements.
+        </p>
+      </section>
+      <!-- Question 5 -->
+      <section class="p-6 rounded-xl bg-white mb-6">
+        <h2 class="font-bold pb-4">
+          Question-5: How do you create, add, and remove elements using
+          JavaScript?
+        </h2>
+        <hr class="border-t-2 border-gray-200 border-dashed" />
+        <p class="text-gray-500 pt-4 font-medium">
+          1. Creating an element:const newElement =
+          document.createElement("h1"). <br />
+          2. Adding an element: document.cards.appendChild(newElement); <br />
+          3.Removing an element: cards.removeChild(newElement);
+        </p>
+      </section>
+    </main>
+    <script src="./js/blog.js"></script>
+  </body>
+</html>

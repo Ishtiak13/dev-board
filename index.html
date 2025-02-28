@@ -25,10 +25,10 @@
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
     <title>Dev Board</title>
   </head>
-  <body class="bg-[#F4F7FF] font-[Poppins] min-h-screen">
+  <body id="body-bg" class="bg-[#F4F7FF] font-[Poppins] min-h-screen">
     <!-- Header -->
     <header class="max-w-[1600px] mx-auto p-3">
-      <nav class="flex justify-between p-3 rounded-xl bg-white">
+      <nav class="flex justify-between p-3 rounded-xl bg-white cursor-default">
         <div class="flex items-center gap-2">
           <img src="./assets/logo.png" alt="Logo" />
           <h1 class="text-3xl font-bold">
@@ -38,9 +38,11 @@
         <div class="flex items-center gap-2">
           <div class="px-3 py-2 rounded-full bg-[#F4F7FF] text-3xl">
             <i class="fa-solid fa-square-check text-[#3752FD]"></i>
-            <span class="font-bold">20</span>
+            <span id="total-task" class="font-bold">20</span>
           </div>
-          <div><img src="./assets/theme-btn.png" alt="theme btn" /></div>
+          <button id="theme-btn" class="btn py-6">
+            <img src="./assets/theme-btn.png" alt="theme btn" />
+          </button>
         </div>
       </nav>
     </header>
@@ -56,12 +58,13 @@
               ></i>
               <h2 class="font-medium text-[#00303C]">
                 Task Assigned <br />
-                <span class="font-bold text-3xl">05</span>
+                <span id="remaining-task" class="font-bold text-3xl">05</span>
               </h2>
             </div>
             <!-- to do -->
             <div
-              class="flex items-center bg-gradient-to-br from-[#3752FD] to-[#9BA8F8] py-5 pl-10 col-span-2 rounded-xl gap-3"
+              id="blog-page"
+              class="flex items-center bg-gradient-to-br from-[#3752FD] to-[#9BA8F8] py-5 pl-10 col-span-2 rounded-xl gap-3 cursor-pointer"
             >
               <img src="./assets/board.png" alt="Board" />
               <h2 class="font-medium text-2xl text-white">
@@ -74,7 +77,7 @@
               <i
                 class="fa-solid fa-calendar-days text-3xl p-3 bg-white rounded-full"
               ></i>
-              <h2 class="font-medium text-2xl text-[#00303C]">
+              <h2 id="week-day" class="font-medium text-2xl text-[#00303C]">
                 Wed ,
                 <br />
                 <span class="font-bold">Jul 28 2025</span>
@@ -83,7 +86,7 @@
           </div>
           <hr class="border-t-2 border-dashed border-gray-300" />
           <!-- tasks details -->
-          <div class="grid grid-cols-3 gap-8 p-6">
+          <div id="card-container" class="grid grid-cols-3 gap-8 p-6">
             <!-- card 1 -->
             <div class="card bg-[#F4F7FF]">
               <div class="card-body">
@@ -105,7 +108,9 @@
                       <span class="font-medium text-base">21 March 2025</span>
                     </p>
                   </div>
-                  <button class="btn bg-[#3752FD] text-white rounded-xl">
+                  <button
+                    class="btn bg-[#3752FD] text-white rounded-xl complete-btn"
+                  >
                     Completed
                   </button>
                 </div>
@@ -130,7 +135,9 @@
                       <span class="font-medium text-base">21 March 2025</span>
                     </p>
                   </div>
-                  <button class="btn bg-[#3752FD] text-white rounded-xl">
+                  <button
+                    class="btn bg-[#3752FD] text-white rounded-xl complete-btn"
+                  >
                     Completed
                   </button>
                 </div>
@@ -155,7 +162,9 @@
                       <span class="font-medium text-base">21 March 2025</span>
                     </p>
                   </div>
-                  <button class="btn bg-[#3752FD] text-white rounded-xl">
+                  <button
+                    class="btn bg-[#3752FD] text-white rounded-xl complete-btn"
+                  >
                     Completed
                   </button>
                 </div>
@@ -178,7 +187,9 @@
                       <span class="font-medium text-base">21 March 2025</span>
                     </p>
                   </div>
-                  <button class="btn bg-[#3752FD] text-white rounded-xl">
+                  <button
+                    class="btn bg-[#3752FD] text-white rounded-xl complete-btn"
+                  >
                     Completed
                   </button>
                 </div>
@@ -203,7 +214,9 @@
                       <span class="font-medium text-base">21 March 2025</span>
                     </p>
                   </div>
-                  <button class="btn bg-[#3752FD] text-white rounded-xl">
+                  <button
+                    class="btn bg-[#3752FD] text-white rounded-xl complete-btn"
+                  >
                     Completed
                   </button>
                 </div>
@@ -228,7 +241,9 @@
                       <span class="font-medium text-base">21 March 2025</span>
                     </p>
                   </div>
-                  <button class="btn bg-[#3752FD] text-white rounded-xl">
+                  <button
+                    class="btn bg-[#3752FD] text-white rounded-xl complete-btn"
+                  >
                     Completed
                   </button>
                 </div>
@@ -242,16 +257,18 @@
             <h2 class="text-xl font-medium">
               <i class="fa-solid fa-clock-rotate-left"></i> Activity log
             </h2>
-            <button class="btn bg-[#3752FD] text-white rounded-xl">
+            <button
+              id="btn-clear-history"
+              class="btn bg-[#3752FD] text-white rounded-xl"
+            >
               Clear History
             </button>
           </div>
           <hr class="border-t-2 border-dashed border-gray-300" />
-          <div class="p-4 m-4 bg-[#F4F7FF] rounded-xl">
-            <p>You have Complete The Task Add Dark Mode at 12:48:15 PM</p>
-          </div>
+          <div id="history-details"></div>
         </div>
       </section>
     </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>
