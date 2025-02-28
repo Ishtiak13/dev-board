@@ -38,7 +38,7 @@ ${formattedWeekday} ,
                 <span class="font-bold">${formatDate}</span>`;
 // for another pages //////////////
 document.getElementById("blog-page").addEventListener("click", function () {
-  window.location.href = "../blog.html";
+  window.location.href = "./blog.html";
 });
 
 // complete btn click task//////
